@@ -1,0 +1,17 @@
+{% for action in actions %}
+    {% if action != 'services' and action != 'gateway' and action != 'mirrors' and action != 'route' %}
+        {% if action.0 != "("%}
+            <ul style="text-indent:1em;list-style-position:inside">
+                <li>
+                    <span style="font-style:italic;font-weight:bold">
+                    {{ action }}
+                    </span>
+        {% else %}
+            {{ action  }}
+                </li>
+            </ul>
+        {% endif %}
+    {% else %}
+        {{ action }}
+    {% endif %}
+{% endfor %}

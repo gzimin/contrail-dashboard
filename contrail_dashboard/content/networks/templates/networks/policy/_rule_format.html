@@ -1,0 +1,17 @@
+{% for rule in rules %}
+    <ul>
+    <li style="text-indent:-1em;padding-left:1em;list-style-position:inside">
+    {% for kw in rule %}
+        {% if kw != 'policy' and kw != 'network' and kw != 'protocol' and kw != 'ports' and kw != 'action' and kw != 'services' and kw != 'mirrors' and kw != 'route' and kw != 'gateway' and kw.0 != "("%}
+            <span style="font-style:italic;font-weight:bold">
+            {{ kw  }}
+            </span>
+        {% else %}
+            <span>
+            {{ kw  }}
+            </span>
+        {% endif %}
+    {% endfor %}
+  </li>
+</ul>
+{% endfor %}

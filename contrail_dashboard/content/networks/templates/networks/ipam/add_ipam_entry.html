@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Add IPAM Entry" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Add IPAM Entry") %}
+{% endblock page_header %}
+
+{% block main %}
+  {% include 'project/networks/ipam/_add_ipam_entry.html' %}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Edit Network Policy Rules" %}{% endblock %}
+
+{% block page_header %}
+  {% include "horizon/common/_page_header.html" with title=_("Edit Network Policy Rules: ")|add:policy.name %}
+{% endblock page_header %}
+
+{% block main %}
+  {{ table.render }}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% for policy in policies %}
+<ul>
+  <li>
+    <span style="font-weight:bold">
+    {{ policy.2 }}
+    </span>
+    <span style="font-style:italic">
+    &nbsp;&nbsp;({{ policy.1 }})
+    </span>
+  </li>
+</ul>
+{% endfor %}

@@ -1,0 +1,11 @@
+{% for net in nets %}
+    {% if net != 'policy' and net != 'network' and net.0 != "("%}
+        <span style="font-style:italic;font-weight:bold">
+        {{ net  }}
+        </span>
+    {% else %}
+        <span>
+        {{ net  }}
+        </span>
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,48 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block form_id %}create_policy_rule_form{% endblock %}
+{% block form_action %}{% url 'horizon:project:networks:policy:add_rule' policy_id %}{% endblock %}
+{% block form_class %}{{ block.super }} horizontal split_half{% endblock %}
+{% block modal-header %}{% trans "Add Rule" %}{% endblock %}
+{% block modal_id %}create_policy_rule_modal{% endblock %}
+
+{% block modal-body %}
+<style type="text/css">
+#create_policy_rule_modal form.horizontal.split_half .modal-body .form-group {
+  width: 350px;
+}
+#create_policy_rule_modal form.horizontal .modal-body .form-group {
+  float: left;
+  margin-bottom: 9px;
+}
+#create_policy_rule_modal .modal-body input,
+#create_policy_rule_modal .modal-body textarea,
+#create_policy_rule_modal .modal-body select,
+#create_policy_rule_modal .modal-body .uneditable-input{
+  display: inline-block;
+  width: 340px;
+  padding: 4px;
+  margin-bottom: 9px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #555555;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+</style>
+<div class="row">
+  <div class="col-sm-12">
+    <fieldset>
+      {% include "horizon/common/_form_fields.html" %}
+    </fieldset>
+  </div>
+</div>
+{% endblock %}
+
+{% block modal-footer %}
+  <a href="{% url 'horizon:project:networks:policy:detail' policy_id %}" class="btn btn-default cancel">{% trans "Cancel" %}</a>
+  <input class="btn btn-primary" type="submit" value="{% trans "Add" %}" />
+{% endblock %}

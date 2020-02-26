@@ -1,0 +1,27 @@
+{% extends "horizon/common/_modal_form.html" %}
+{% load i18n %}
+
+{% block form_id %}update_policy_form{% endblock %}
+{% block form_action %}{% url 'horizon:project:networks:policy:update' policy.id%}{% endblock %}
+
+{% block modal-header %}{% trans "Edit Network Policy" %}{% endblock %}
+{% block modal_id %}update_policy_modal{% endblock %}
+
+{% block modal-body %}
+<div class="row">
+  <div class="col-sm-6">
+    <fieldset>
+    {% include "horizon/common/_form_fields.html" %}
+    </fieldset>
+  </div>
+  <div class="col-sm-6">
+    <h3>{% trans "Description" %}:</h3>
+    <p>{% trans "From here you can modify name and description of a network policy." %}</p>
+  </div>
+</div>
+{% endblock %}
+
+{% block modal-footer %}
+  <a href="{% url 'horizon:project:networks:index' %}" class="btn btn-default cancel">{% trans "Cancel" %}</a>
+  <input class="btn btn-primary" type="submit" value="{% trans "Edit Network Policy" %}" />
+{% endblock %}
